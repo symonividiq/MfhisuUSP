@@ -106,8 +106,6 @@ jobs:
           username: ${{ secrets.AWS_ACCESS_KEY_ID }}
           password: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-      - uses: ./.github/actions/docker-buildx-setup
-
       - name: Build and Push Rust images
         run: docker/docker-bake-rust-all.sh
         env:
